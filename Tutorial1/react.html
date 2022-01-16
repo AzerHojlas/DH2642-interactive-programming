@@ -1,0 +1,74 @@
+<html>
+    <head>
+        
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="js/views/SummaryView.js" type = "text/jsx"></script>
+        <script src="js/views/SidebarView.js" type="text/jsx"></script>
+        <script src="js/views/SearchView.js" type="text/jsx"></script>
+
+    </head>
+
+    <body>
+        <!-- <div id = "constant html SummaryView"></div>
+
+        <div id = "scripted SummaryView"></div> -->
+
+        <div id = "SidebarView"></div>
+
+        <div id = "SearchFormView"></div>
+
+        <div id = "app"></div>
+    </body>
+
+<!--    <script type="text/jsx">
+        
+        const persons = 4;
+        ReactDOM.render(
+            <div>
+                Summary for <span title="nr. guests">{persons}</span> guests:
+            </div>
+            ,document.getElementById("constant html SummaryView")
+        );
+
+        ReactDOM.render(<SummaryView persons={5} />, document.getElementById("scripted SummaryView"));
+    
+       
+ </script>
+-->
+
+   <!-- <script type="text/jsx"> 
+      
+        ReactDOM.render(<SidebarView  
+
+            guests = {3}
+            setGuests={amount=>console.log("the user wants a dinner for " + amount + " guest")}
+
+        />, document.getElementById("SidebarView"));
+
+    </script> -->
+
+
+     <script type="text/jsx"> 
+
+        ReactDOM.render(<ReactSidebarLocalState guests={3} />, document.getElementById("SidebarView"));
+
+        ReactDOM.render(<ReactTopLevelNumber />, document.getElementById("SidebarView"));
+
+    </script>
+            
+    <!-- <script type="text/jsx"> 
+
+        ReactDOM.render(<SearchFormView 
+            
+            options={["starter", "main course", "dessert"]} 
+            onSearch={()=>console.log("User wants to search!")}             
+            onText={txt=>console.log("User typed: ", txt)}	
+            onDishType={dishType=>console.log("User chose dish type: ", dishType)}
+    
+        />, document.getElementById("SearchFormView"));
+   
+    </script>  -->
+    
+</html>
